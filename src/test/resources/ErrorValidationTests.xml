@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite parallel="tests" name="Suite01">
+
+<groups>
+    <run>
+        <include name="Error Handling"/>
+    </run>
+</groups>
+
+    <test thread-count="5" name="Submit Order Test">
+
+        <classes>
+            <class name="com.irene_labs.tests.SubmitOrderTest" />
+
+        </classes>
+    </test> <!--Test -->
+
+    <test thread-count="5" name="Error Validations Test">
+
+        <classes>
+            <class name="com.irene_labs.tests.ErrorValidations" />
+
+        </classes>
+    </test> <!--Test -->
+
+</suite> <!--Suite -->
