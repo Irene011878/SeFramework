@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class SubmitOrderTest extends BaseTest {
+/*public class SubmitOrderTest extends BaseTest {
 
     String productName = "ZARA COAT 3";
 
@@ -58,7 +58,68 @@ public class SubmitOrderTest extends BaseTest {
         List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir") + "//src//test//java//com//irene_labs//Data//PurchaseOrder.json");
         return new Object[][] {{data.get(0)}, {data.get(1)} };
 }
+}*/
+
+//16 dic cambios chat gpt
+
+public class SubmitOrderTest extends BaseTest {
+
+    String productName = "ZARA COAT 3";
+
+    @Test(dataProvider = "getData", groups = {"Purchase"})
+    public void submitOrder(HashMap<String, String> input)
+            throws InterruptedException, IOException {
+
+        ProductCatalogue productCatalogue =
+                landingPage.loginApplication(
+                        input.get("email"),
+                        input.get("password")
+                );
+
+        productCatalogue.addProductToCart(input.get("product"));
+        CartPage cartPage = productCatalogue.goToCartPage();
+
+        Assert.assertTrue(cartPage.VerifyProductDisplay(input.get("product")));
+
+        CheckoutPage checkoutPage = cartPage.goToCheckout();
+        checkoutPage.selectCountry("india");
+
+        ConfirmationPage confirmationPage = checkoutPage.submitOrder();
+        Assert.assertTrue(
+                confirmationPage.getConfirmationMessage()
+                        .equalsIgnoreCase("Thankyou for the order.")
+        );
+    }
+
+    @Test(groups = {"Purchase"})
+    public void OrderHistoryTest() {
+
+        ProductCatalogue productCatalogue =
+                landingPage.loginApplication(
+                        "iremma8@love.com",
+                        "1234/Abcd"
+                );
+
+        OrderPage orderPage = productCatalogue.goToOrdersPage();
+        Assert.assertTrue(orderPage.VerifyOrderDisplay(productName));
+    }
+
+    @DataProvider
+    public Object[][] getData() throws IOException {
+
+        List<HashMap<String, String>> data =
+                getJsonDataToMap(
+                        System.getProperty("user.dir")
+                                + "/src/test/java/com/irene_labs/Data/PurchaseOrder.json"
+                );
+
+        return new Object[][]{
+                {data.get(0)},
+                {data.get(1)}
+        };
+    }
 }
+
 
 
 

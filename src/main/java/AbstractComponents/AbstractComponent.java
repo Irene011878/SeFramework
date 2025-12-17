@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class AbstractComponent {
+/*public class AbstractComponent {
     //todos los metodos que creas que seran reusables ponlos aqui
     //this will be the parent class of the Pages classes
 
@@ -58,5 +58,50 @@ public class AbstractComponent {
         //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         //wait.until(ExpectedConditions.invisibilityOf(ele));
 
+    }
+}*/
+public class AbstractComponent {
+
+    protected WebDriver driver;
+    protected WebDriverWait wait;
+
+    By cartHeader = By.cssSelector("[routerlink*='cart']");
+    By orderHeader = By.cssSelector("[routerlink*='myorders']");
+
+    // 🔹 Constructor
+    public AbstractComponent(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+
+    // 🔹 Espera por locator (By)
+    public void waitForElementToAppear(By locator) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    // 🔹 Espera por WebElement
+    public void waitForWebElementToAppear(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    // 🔹 Espera a que desaparezca un elemento (By)
+    public void waitForElementToDisappear(By locator) {
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
+
+    // 🔹 Espera a que desaparezca un WebElement
+    public void waitForWebElementToDisappear(WebElement element) {
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
+    // 🔹 Navegación común
+    public CartPage goToCartPage() {
+        driver.findElement(cartHeader).click();
+        return new CartPage(driver);
+    }
+
+    public OrderPage goToOrdersPage() {
+        driver.findElement(orderHeader).click();
+        return new OrderPage(driver);
     }
 }

@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class ErrorValidations extends BaseTest {  //esto es LoginErrorValidations
+/*public class ErrorValidations extends BaseTest {  //esto es LoginErrorValidations
 
     @Test(groups = {"Error Handling"}, retryAnalyzer = Retry.class)
     public void LoginErrorValidation() throws InterruptedException, IOException {
@@ -42,6 +42,37 @@ public class ErrorValidations extends BaseTest {  //esto es LoginErrorValidation
         Boolean match = cartPage.VerifyProductDisplay("ZARA COAT 33");
         Assert.assertFalse(match);
 
+    }
+}*/
+
+//cambios 16 dic
+public class ErrorValidations extends BaseTest {
+
+    @Test(groups = {"Error Handling"}, retryAnalyzer = Retry.class)
+    public void LoginErrorValidation() throws InterruptedException, IOException {
+
+        landingPage.loginApplication("emmac@gmail.com", "1234/Abc");
+
+        Assert.assertEquals(
+                landingPage.getErrorMessage(),
+                "Incorrect email or password."
+        );
+    }
+
+    @Test(groups = {"Error Handling"})
+    public void productErrorValidations() throws InterruptedException, IOException {
+
+        String productName = "ZARA COAT 3";
+
+        ProductCatalogue productCatalogue =
+                landingPage.loginApplication("iremma8@love.com", "1234/Abcd");
+
+        productCatalogue.addProductToCart(productName);
+        CartPage cartPage = productCatalogue.goToCartPage();
+
+        Assert.assertFalse(
+                cartPage.VerifyProductDisplay("ZARA COAT 33")
+        );
     }
 }
 
