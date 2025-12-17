@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6484e4d3-4d55-4256-8d63-cdded1565e41" name="Changes" comment="Fix BaseTest ChromeOptions">
+    <list default="true" id="6484e4d3-4d55-4256-8d63-cdded1565e41" name="Changes" comment="Initial commit - Selenium TestNG framework">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Irene011878"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ireneaguilar/Irene011878/SeFramework.git",
+    "accountId": "3587b5c4-eac6-486d-9d26-8a98243fb43a"
+  }
+}]]></component>
   <component name="JavaAutoRunManager">
     <enabled-run-configurations>
       <run-configuration type="TestNG" name="$PROJECT_DIR$/src/test/resources/testng.xml" />
@@ -36,26 +48,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.StandaloneTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SubmitOrderTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TestNG.C:/Users/irene/IdeaProjects/SeFramework/src/test/resources/ErrorValidationTests.xml.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.C:/Users/irene/IdeaProjects/SeFramework/src/test/resources/PurchaseTests.xml.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.C:/Users/irene/IdeaProjects/SeFramework/src/test/resources/testng.xml.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ErrorValidations.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ErrorValidations.productErrorValiations.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ErrorValidations.submitOrder.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.SubmitOrderTest.OrderHistoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.SubmitOrderTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.SubmitOrderTest.submitOrder.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/irene/IdeaProjects/SeFramework/src/test/resources&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.StandaloneTest.executor": "Run",
+    "Application.SubmitOrderTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.C:/Users/irene/IdeaProjects/SeFramework/src/test/resources/ErrorValidationTests.xml.executor": "Run",
+    "TestNG.C:/Users/irene/IdeaProjects/SeFramework/src/test/resources/PurchaseTests.xml.executor": "Run",
+    "TestNG.C:/Users/irene/IdeaProjects/SeFramework/src/test/resources/testng.xml.executor": "Run",
+    "TestNG.ErrorValidations.executor": "Run",
+    "TestNG.ErrorValidations.productErrorValiations.executor": "Run",
+    "TestNG.ErrorValidations.submitOrder.executor": "Run",
+    "TestNG.SubmitOrderTest.OrderHistoryTest.executor": "Run",
+    "TestNG.SubmitOrderTest.executor": "Run",
+    "TestNG.SubmitOrderTest.submitOrder.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/irene/IdeaProjects/SeFramework/src/test/resources"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.irene_labs" />
@@ -169,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765913008482</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial commit - Selenium TestNG framework">
+      <option name="closed" value="true" />
+      <created>1765913837536</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765913837536</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,6 +205,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix BaseTest ChromeOptions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix BaseTest ChromeOptions" />
+    <MESSAGE value="Initial commit - Selenium TestNG framework" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit - Selenium TestNG framework" />
   </component>
 </project>
