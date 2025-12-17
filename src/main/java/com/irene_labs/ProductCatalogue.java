@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class ProductCatalogue extends AbstractComponent {
+/*public class ProductCatalogue extends AbstractComponent {
 
     //WebDriver driver;
 
@@ -48,6 +48,45 @@ public class ProductCatalogue extends AbstractComponent {
         waitForElementToAppear(toastMessage);
         waitForElementToDissapear(spinner);
 
+
+
+
     }
 
+}*/
+public class ProductCatalogue extends AbstractComponent {
+
+    By productsBy = By.cssSelector(".mb-3");
+    By addToCart = By.cssSelector(".card-body button:last-of-type");
+    By toastMessage = By.cssSelector("#toast-container");
+    By spinner = By.cssSelector(".ng-animating"); // 👈 ESTE ES EL BUENO
+
+    // constructor
+    public ProductCatalogue(WebDriver driver) {
+        super(driver);
+    }
+
+    // ACTION METHODS
+    public List<WebElement> getProductList() {
+        waitForElementToAppear(productsBy);
+        return driver.findElements(productsBy);
+    }
+
+    public WebElement getProductByName(String productName) {
+        return getProductList().stream()
+                .filter(product ->
+                        product.findElement(By.cssSelector("b"))
+                                .getText().equals(productName))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public void addProductToCart(String productName) {
+
+        WebElement prod = getProductByName(productName);
+        prod.findElement(addToCart).click();
+
+        waitForElementToAppear(toastMessage);
+        waitForElementToDisappear(spinner); // 👈 CLAVE PARA CI
+    }
 }
